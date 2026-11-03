@@ -1,0 +1,27 @@
+apiVersion: alb.networking.azure.io/v1
+kind: WebApplicationFirewallPolicy
+metadata:
+  name: waf-public
+  namespace: demo
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: gw-public
+    namespace: demo
+  webApplicationFirewall:
+    id: WAF_ID
+---
+apiVersion: alb.networking.azure.io/v1
+kind: WebApplicationFirewallPolicy
+metadata:
+  name: waf-private
+  namespace: demo
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: gw-private
+    namespace: demo
+  webApplicationFirewall:
+    id: WAF_ID
