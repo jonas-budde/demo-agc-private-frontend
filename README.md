@@ -1,6 +1,6 @@
 # AGC private frontend demo
 
-Tests the Application Gateway for Containers (AGC) private frontend on AKS with OpenTofu: a public and a private frontend on one AGC, a private endpoint with private DNS, and WAF per Gateway. Blog post: [link to post]
+Tests the Application Gateway for Containers (AGC) private frontend on AKS with OpenTofu: a public and a private frontend on one AGC, a private endpoint with private DNS, and WAF per Gateway. Blog post: [Application Gateway for Containers with a Private Frontend](https://jonas.garden/posts/agc-private-frontend/)
 
 ![architecture](docs/architecture.png)
 
