@@ -23,4 +23,4 @@ sed "s#AGC_ID#$(tofu output -raw agc_id)#" ../manifests/20-gateway-private.yaml 
 kubectl apply -f ../manifests/30-waf.yaml
 ```
 
-The private frontend needs the ALB controller Helm value `albController.privateFrontend=true`. That creates the `azure-alb-internal` GatewayClass.
+ALB Controller chart 1.13.0 or newer creates the `azure-alb-internal` GatewayClass for private frontends. Older charts need `albController.privateFrontend=true`.

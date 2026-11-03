@@ -159,7 +159,7 @@ resource "helm_release" "alb" {
   create_namespace = true
   repository       = "oci://mcr.microsoft.com/application-lb/charts"
   chart            = "alb-controller"
-  version          = "1.12.4"
+  version          = "1.13.0"
 
   set {
     name  = "albController.namespace"
@@ -168,11 +168,6 @@ resource "helm_release" "alb" {
   set {
     name  = "albController.podIdentity.clientID"
     value = azurerm_user_assigned_identity.alb.client_id
-  }
-
-  set {
-    name  = "albController.privateFrontend"
-    value = var.enable_private_frontend
   }
 
   depends_on = [azurerm_federated_identity_credential.alb, azurerm_role_assignment.alb_config_manager]
